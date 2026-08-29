@@ -1,0 +1,456 @@
+.contactSection {
+  padding: 5rem 2rem;
+  background-color: var(--bg-primary);
+  opacity: 0;
+  transform: translateY(60px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.contactSection.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* === العنوان (Header) === */
+.header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.tag {
+  display: inline-block;
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+  border: 1px solid rgba(255, 107, 90, 0.2);
+  padding: 0.3rem 1.2rem;
+  border-radius: 50px;
+}
+
+.header h2 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.divider {
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent), #ff9a76);
+  border-radius: 10px;
+  margin: 0 auto 1.5rem;
+}
+
+.subtitle {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* === شبكة المحتوى === */
+.contentGrid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+/* === معلومات الاتصال (الجانب الأيسر) === */
+.contactInfo {
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: opacity 0.6s ease 0.2s, transform 0.6s ease 0.2s;
+}
+
+.visible .contactInfo {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.contactInfo h3 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.infoText {
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+}
+
+.infoItems {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.infoItem {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.infoIcon {
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--accent);
+  flex-shrink: 0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.infoItem:hover .infoIcon {
+  background: rgba(255, 107, 90, 0.12);
+  border-color: rgba(255, 107, 90, 0.35);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(255, 107, 90, 0.18);
+  color: #ff8577;
+}
+
+.infoItem h4 {
+  color: var(--text-primary);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-align: start;
+  margin-bottom: 0.2rem;
+}
+
+.infoItem a,
+.infoItem p {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.infoItem a:hover {
+  color: var(--accent);
+}
+
+/* === روابط التواصل الاجتماعي === */
+.socialLinks {
+  display: flex;
+  gap: 1rem;
+}
+
+.socialLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  color: var(--text-secondary);
+  text-decoration: none;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.socialLink::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.12), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.socialLink:hover {
+  border-color: var(--accent);
+  color: #fff;
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 10px 25px rgba(255, 107, 90, 0.25), 0 0 15px rgba(255, 107, 90, 0.15);
+  background: rgba(255, 107, 90, 0.12);
+}
+
+.socialLink:hover::before {
+  opacity: 1;
+}
+
+.socialLink svg {
+  transition: transform 0.3s ease;
+}
+
+.socialLink:hover svg {
+  transform: scale(1.1);
+}
+
+/* === نموذج الاتصال (الجانب الأيمن) === */
+.contactForm {
+  opacity: 0;
+  transform: translateX(30px);
+  transition: opacity 0.6s ease 0.4s, transform 0.6s ease 0.4s;
+}
+
+.visible .contactForm {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.contactForm h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+}
+
+.contactForm form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.formGroup label {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.formGroup input,
+.formGroup textarea {
+  padding: 0.85rem 1.2rem;
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  color: var(--text-primary);
+  font-size: 16px;
+  font-family: inherit;
+  width: 100%;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.formGroup input:focus,
+.formGroup textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(255, 107, 90, 0.1);
+}
+
+.formGroup input::placeholder,
+.formGroup textarea::placeholder {
+  color: var(--text-secondary);
+  opacity: 0.5;
+}
+
+.submitBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 0.95rem 2.2rem;
+  background: linear-gradient(135deg, var(--accent) 0%, #ff8570 50%, #ff523d 100%);
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 1.05rem;
+  letter-spacing: 0.3px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 14px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 20px rgba(255, 107, 90, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  margin-top: 0.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.submitBtn:hover:not(:disabled) {
+  box-shadow: 0 8px 32px rgba(255, 107, 90, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  transform: translateY(-2px);
+  color: #ffffff;
+}
+
+.submitBtn:hover:not(:disabled) .submitIcon {
+  transform: translate(3px, -3px) scale(1.1);
+}
+
+.submitBtn:active:not(:disabled) {
+  transform: translateY(0) scale(0.98);
+}
+
+.submitBtn:disabled {
+  opacity: 0.75;
+  cursor: not-allowed;
+}
+
+.submitIcon {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  flex-shrink: 0;
+}
+
+.spinner {
+  width: 18px;
+  height: 18px;
+  border: 2.5px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.statusMessage {
+  padding: 0.8rem 1.2rem;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-align: center;
+  animation: fadeIn 0.3s ease;
+}
+
+.statusSuccess {
+  background: rgba(34, 197, 94, 0.15);
+  border: 1px solid rgba(34, 197, 94, 0.3);
+  color: #4ade80;
+}
+
+.statusError {
+  background: rgba(239, 68, 68, 0.15);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: #f87171;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* === Responsive Breakpoints === */
+@media (max-width: 1024px) {
+  .contactSection {
+    padding: 4rem 1.5rem;
+  }
+
+  .contentGrid {
+    gap: 3rem;
+  }
+
+  .header h2 {
+    font-size: 2.4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .contactSection {
+    padding: 3rem 1.2rem;
+  }
+
+  .header {
+    margin-bottom: 2.5rem;
+  }
+
+  .header h2 {
+    font-size: 2.2rem;
+  }
+
+  .contentGrid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .contactInfo {
+    transform: translateY(20px);
+  }
+
+  .visible .contactInfo {
+    transform: translateY(0);
+  }
+
+  .contactForm {
+    transform: translateY(20px);
+  }
+
+  .visible .contactForm {
+    transform: translateY(0);
+  }
+
+  .formGroup label {
+    text-align: start;
+  }
+
+  .infoItems {
+    gap: 1.2rem;
+  }
+
+  .socialLinks {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .header h2 {
+    font-size: 1.8rem;
+  }
+
+  .infoItem {
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+    gap: 0.85rem;
+  }
+
+  .infoIcon {
+    width: 44px;
+    height: 44px;
+  }
+
+  .socialLink {
+    width: 44px;
+    height: 44px;
+  }
+
+  .submitBtn {
+    width: 100%;
+    padding: 0.85rem 1.5rem;
+    font-size: 0.98rem;
+  }
+}

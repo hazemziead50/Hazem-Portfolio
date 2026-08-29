@@ -1,0 +1,433 @@
+.heroSection {
+  min-height: calc(100vh - 80px);
+  display: flex;
+  align-items: center;
+  padding: 3rem 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.heroContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3.5rem;
+}
+
+.heroContent {
+  flex: 1.2;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.greeting {
+  font-size: 2rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  letter-spacing: 2px;
+  margin-bottom: 0.2rem;
+  opacity: 0;
+  animation: fadeInUp 0.6s ease 0.1s forwards;
+}
+
+.greeting span {
+  display: inline-block;
+  color: var(--accent);
+  font-size: 2.2rem;
+  animation: pulseDot 1.5s ease infinite;
+}
+
+.nameHeading {
+  font-size: 3.4rem;
+  font-weight: 800;
+  line-height: 1.15;
+  margin: 0;
+  letter-spacing: -1px;
+}
+
+.nameHeading span {
+  background: linear-gradient(135deg, var(--accent) 0%, #ffb088 50%, var(--accent) 100%);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 4s ease-in-out infinite;
+}
+
+.typewriterHeading {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-top: 0.2rem;
+  margin-bottom: 0.8rem;
+  min-height: 2.8rem;
+  display: flex;
+  align-items: center;
+}
+
+.typewriterHeading::after {
+  content: '';
+  display: inline-block;
+  width: 3px;
+  height: 1.6rem;
+  background-color: var(--accent);
+  margin-left: 8px;
+  border-radius: 2px;
+  animation: blink 0.6s step-end infinite;
+}
+
+.typewriterText {
+  display: inline-block;
+}
+
+.description {
+  font-size: 1.15rem;
+  color: var(--text-secondary);
+  max-width: 520px;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+  opacity: 0;
+  animation: fadeInUp 0.6s ease 0.3s forwards;
+}
+
+.actions {
+  display: flex;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+  align-items: center;
+  opacity: 0;
+  animation: fadeInUp 0.6s ease 0.4s forwards;
+}
+
+.primaryButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 0.85rem 1.8rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+  background: linear-gradient(135deg, var(--accent) 0%, #ff8570 50%, #ff523d 100%);
+  border-radius: 14px;
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 20px rgba(255, 107, 90, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.primaryButton:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(255, 107, 90, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  color: #ffffff;
+}
+
+.primaryButton:hover .btnIcon {
+  transform: translateX(4px);
+}
+
+.primaryButton:active {
+  transform: translateY(-1px) scale(0.98);
+}
+
+.secondaryButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 0.85rem 1.8rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 14px;
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.secondaryButton:hover {
+  background: rgba(255, 107, 90, 0.12);
+  border-color: rgba(255, 107, 90, 0.4);
+  color: #ff8577;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(255, 107, 90, 0.22);
+}
+
+.secondaryButton:hover .btnIcon {
+  transform: translateY(3px);
+}
+
+.secondaryButton:active {
+  transform: translateY(-1px) scale(0.98);
+}
+
+.btnIcon {
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+}
+
+/* ================= Hero Image ================= */
+.heroImage {
+  flex: 0.9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease 0.2s forwards;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 380px;
+  height: 380px;
+  max-width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  animation: float 6s ease-in-out infinite;
+}
+
+.imageWrapper::before {
+  content: '';
+  position: absolute;
+  inset: -15px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, rgba(255, 107, 90, 0.3), transparent 70%);
+  filter: blur(20px);
+  z-index: -1;
+  animation: pulseGlow 4s ease-in-out infinite alternate;
+}
+
+.imageWrapper::after {
+  content: '';
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  padding: 3px;
+  background: conic-gradient(from 0deg, var(--accent), #ffd700, var(--accent), #ffd700, var(--accent));
+  -webkit-mask-image: linear-gradient(#fff 0 0), linear-gradient(#fff 0 0);
+  -webkit-mask-clip: content-box, border-box;
+  -webkit-mask-composite: xor;
+  mask-image: linear-gradient(#fff 0 0), linear-gradient(#fff 0 0);
+  mask-clip: content-box, border-box;
+  mask-composite: exclude;
+  animation: spinBorder 8s linear infinite;
+}
+
+.imageWrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid rgba(255, 255, 255, 0.08);
+  display: block;
+  filter: grayscale(15%) contrast(1.05);
+  transition: filter 0.5s ease;
+}
+
+.imageWrapper img:hover {
+  filter: grayscale(0%) contrast(1.1);
+}
+
+/* ================= KeyFrames ================= */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulseDot {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.3;
+    transform: scale(0.8);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes spinBorder {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulseGlow {
+  0% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1.15);
+    opacity: 0.9;
+  }
+}
+
+/* ================= Responsive Breakpoints ================= */
+@media (max-width: 1024px) {
+  .heroSection {
+    padding: 2.5rem 1.5rem;
+  }
+
+  .heroContainer {
+    gap: 2rem;
+  }
+
+  .nameHeading {
+    font-size: 2.8rem;
+  }
+
+  .imageWrapper {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroSection {
+    padding: 2rem 1.2rem;
+    min-height: auto;
+  }
+
+  .heroContainer {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 2.5rem;
+  }
+
+  .heroContent {
+    align-items: center;
+  }
+
+  .nameHeading {
+    font-size: 2.5rem;
+  }
+
+  .typewriterHeading {
+    font-size: 1.4rem;
+    justify-content: center;
+    min-height: 2.2rem;
+  }
+
+  .description {
+    font-size: 1.05rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+
+  .actions {
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .imageWrapper {
+    width: 240px;
+    height: 240px;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroSection {
+    padding: 1.5rem 1rem;
+  }
+
+  .nameHeading {
+    font-size: 2rem;
+  }
+
+  .greeting {
+    font-size: 1.6rem;
+  }
+
+  .typewriterHeading {
+    font-size: 1.2rem;
+  }
+
+  .description {
+    font-size: 0.95rem;
+  }
+
+  .imageWrapper {
+    width: 190px;
+    height: 190px;
+  }
+
+  .actions {
+    flex-direction: column;
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .primaryButton,
+  .secondaryButton {
+    width: 100%;
+    padding: 0.75rem 1.2rem;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 350px) {
+  .nameHeading {
+    font-size: 1.75rem;
+  }
+
+  .imageWrapper {
+    width: 160px;
+    height: 160px;
+  }
+}
+
