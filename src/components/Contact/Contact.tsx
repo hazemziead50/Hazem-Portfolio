@@ -63,6 +63,7 @@ function Contact() {
                 type: 'success',
                 message: '✅ Your message has been sent successfully! I\'ll get back to you soon.',
             });
+            
             setTimeout(()=>{
                 setSubmitStatus({
                     type: null,
