@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import styles from './Navbar.module.css';
 
+
 function Navbar() {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMenuOpen, setIsMenuOpen] = useState(false);

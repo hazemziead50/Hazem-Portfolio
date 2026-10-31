@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import styles from './Hero.module.css';
-import heroImg from '../../assets/1.jpg';
+import heroImg from '../../../assets/image hero.webp';
+
 
 function Hero() {
     const [displayText, setDisplayText] = useState('');
@@ -58,7 +59,8 @@ function Hero() {
 
                 <div className={styles.heroImage}>
                     <div className={styles.imageWrapper}>
-                        <img src={heroImg} alt="Hazem Ziead - Front-End Developer" />
+                        <link rel="preload" as="image" href={heroImg} />
+                        <img src={heroImg} alt="Hazem Ziead - Front-End Developer" fetchPriority="high" />
                     </div>
                 </div>
             </div>
