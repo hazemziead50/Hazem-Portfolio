@@ -14,6 +14,4 @@ export const router = createBrowserRouter([
       },
     ],
   },
-], {
-  basename: "/Hazem-Portfolio",
-});
+], );
